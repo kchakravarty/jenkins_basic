@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mongodb:
+    image: jenkins/jenkins:lts-jdk11
+    container_name: jenkins_master
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - jenkins_home:/var/jenkins_home
+volumes: # define the list of volumes that need to be used
+  jenkins_home:
+    external: true
